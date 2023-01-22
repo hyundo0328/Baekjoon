@@ -1,29 +1,27 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Main {
 
-	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
-
-		String str = in.nextLine();
-		int count = 0;
+	public static void main(String[] args) throws IOException {		
+		/* Buffer 버전 */
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		StringTokenizer st;
 		
-		for(int i=0;i<str.length();i++) {
-			if(str.charAt(i)==' ') {
-				if(i==str.length()-1) {
-					break;
-				}
-				count++;
-			}
-		}
-
-		if(str.charAt(0)==' ') {
-			count--;
-		}
-		count++;
-		System.out.println(count);
+		String str = br.readLine();
 		
-		in.close();
+		st = new StringTokenizer(str, " ");
+		bw.write(st.countTokens()+"\n");
+		
+		br.close();
+		bw.flush();
+		bw.close();
 	}
 
 }
