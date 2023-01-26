@@ -17,13 +17,17 @@ public class Main {
 		int b = Integer.parseInt(st.nextToken());
 		int v = Integer.parseInt(st.nextToken());
 		
-		int count = (int)Math.ceil((v-a)/(double)(a-b)); 
-		bw.write(count+1+"\n");
-//		if(v%(count*(a-b)+a)==0) {
-//			
-//		} else {
-//			bw.write(v/(a-b)+1+"\n");
-//		}
+		/* Ceil 사용 버전 */
+//		int count = (int)Math.ceil((v-a)/(double)(a-b)); 
+//		bw.write(count+1+"\n");
+		
+		/* 일반적인 방법 */
+		int count = (v-a)/(a-b); 
+		if(count*(a-b)+a==v) {
+			bw.write(count+1+"\n");
+		} else {
+			bw.write(count+2+"\n");
+		}
 		
 		br.close();
 		bw.flush();
