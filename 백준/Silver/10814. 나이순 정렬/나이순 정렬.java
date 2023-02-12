@@ -21,18 +21,17 @@ public class Main {
 			str[i][1] = st[1];
 		}
 		
-		Arrays.sort(str, new Comparator<String[]>() {
-			// 나이순으로 정렬
-			@Override
-			public int compare(String[] s1, String[] s2) {
-				return Integer.parseInt(s1[0]) - Integer.parseInt(s2[0]);
-			}
-			
-		});
-		
-//		Arrays.sort(str, (o1,o2)->{
-//			return o1[0].compareTo(o2[0]);
+//		Arrays.sort(str, new Comparator<String[]>() {
+//			@Override
+//			public int compare(String[] s1, String[] s2) {
+//				return Integer.parseInt(s1[0]) - Integer.parseInt(s2[0]);
+//			}
+//			
 //		});
+		
+		Arrays.sort(str, (o1,o2)->{
+			return Integer.parseInt(o1[0])-Integer.parseInt(o2[0]);
+		});
 		
 		for(int i=0;i<num;i++) {
 			bw.write(str[i][0] + " " + str[i][1]+"\n");
