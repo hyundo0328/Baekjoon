@@ -13,22 +13,20 @@ public class Main {
 		String B = in.next();
 		int N = in.nextInt();
 		int sum = 0;
+		int len = B.length();
 		
 		// System.out.println(B.length());
-		for(int i=B.length()-1;i>=0;i--) {
+		
+		while(len != 0) {
 			int num;
-			if ('A' <= B.charAt(i) && B.charAt(i) <= 'Z') {
-				num = B.charAt(i) - 'A' + 10;
+			if ('A' <= B.charAt(B.length()-len) && B.charAt(B.length()-len) <= 'Z') {
+				num = B.charAt(B.length()-len) - 'A' + 10;
 			} else {
-				num = B.charAt(i) - '0';
+				num = B.charAt(B.length()-len) - '0';
 			}
-			// System.out.println("num : "+ num);
-			int tmp = 1;
-			for (int j = B.length() - 1 - i;j > 0;j--) {
-				tmp *= N;	
-			}
-			// System.out.println("tmp : "+ tmp);
-			sum += num * tmp;
+			sum += Math.pow((double)N, (double)(len-1)) * num;
+			
+			len--;
 		}
 		System.out.println(sum);
 	}
