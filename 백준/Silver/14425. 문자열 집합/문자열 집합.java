@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.HashMap;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -11,24 +12,20 @@ public class Main {
 		
 		int n = Integer.parseInt(st.nextToken());
 		int m = Integer.parseInt(st.nextToken());
-		int sum = 0;
-		String str[] = new String[n];
+		int count = 0;
+		HashMap<String, Integer> map = new HashMap<>();
 		
-		for(int i=0;i<n;i++) {
-			str[i] = br.readLine();
-		}
-		
-		for(int i=0;i<m;i++) {
-			String tmp = br.readLine();
-			for(int j=0;j<n;j++) {
-				if(tmp.equals(str[j])) {
-					sum++;
-					break;
-				}
-			}
-		}
-		
-		System.out.println(sum);
+		for (int i = 0; i < n; i++) {
+            map.put(br.readLine(), 1);
+        }
+        for (int i = 0; i < m; i++) {
+            String str = br.readLine();
+            if (map.get(str) != null) {
+                count++;
+            }
+        }
+        
+        System.out.println(count);
 		
 		br.close();
 	}
