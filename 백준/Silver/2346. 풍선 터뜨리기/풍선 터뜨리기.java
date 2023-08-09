@@ -32,9 +32,7 @@ public class Main {
 		}
 		
 		while(!link.isEmpty()) {
-			// 양수인 경우 
 			if(tmp >0) {
-				// 순서 뒤로 돌리기 
 				for(int i=1; i<tmp; i++) {
 					link.addLast(link.pollFirst());
 				}
@@ -43,7 +41,6 @@ public class Main {
 				tmp = next[1];
 				sb.append(next[0]+" ");
 			}
-			// 음수인 경우 
 			else {
 				for(int i=1; i<Math.abs(tmp); i++	) {
 					link.addFirst(link.pollLast());
