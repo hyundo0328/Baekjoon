@@ -6,21 +6,19 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.StringTokenizer;
 
-public class Main {
+public class BJ1764 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		// StringBuilder sb = new StringBuilder();
 		
 		int n = Integer.parseInt(st.nextToken());
 		int m = Integer.parseInt(st.nextToken());
 		int count = 0;
 		
-		HashSet<String> set = new HashSet<>(); 
+		HashSet<String> set = new HashSet<>(); // hashset이 arraylist보다 더 시간이 빠른 것을 잊지 말기!!
 		ArrayList<String> answer = new ArrayList<String>();
 		for(int i=0;i<n;i++) {
 			set.add(br.readLine());
