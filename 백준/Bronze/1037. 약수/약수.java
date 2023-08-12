@@ -14,16 +14,17 @@ public class Main {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st;
 		
-		long count = Long.parseLong(br.readLine());
-		ArrayList<Long> num = new ArrayList<Long>();
+        int count = Integer.parseInt(br.readLine());
 		st = new StringTokenizer(br.readLine());
+        
+		int max = Integer.MIN_VALUE;
+		int min = Integer.MAX_VALUE;
 		while(st.hasMoreTokens()) {
-			num.add(Long.parseLong(st.nextToken()));
+			int N = Integer.parseInt(st.nextToken());
+		 	max = N > max ? N : max;
+		 	min = N < min ? N : min;
 		}
-		
-		Collections.sort(num);
-		
-		bw.write(num.get(0)*num.get(num.size()-1)+"\n");
+		bw.write(min*max+"\n");
 		
 		br.close();
 		bw.flush();
